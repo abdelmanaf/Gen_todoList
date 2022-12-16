@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-
+  <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <!-- personal css -->
   <link rel="stylesheet" href="./assets/css/style.css">
   <title>Task Planner</title>
@@ -14,52 +14,49 @@
 <body>
 
   <body>
-    <div class="container">
-      <h1>Task List</h1>
-    </div>
-    
-    <div class="container">
-      <label  class="form-label">Task Name</label>
-      <input type="text" class="form-control"placeholder="">
-    </div>
-    <div class="container">
-      <label class="form-label">Task Description</label>
-      <input type="text" class="form-control" placeholder="">
-    </div>
-    <div class="container">
-      <label class="form-label">Assigned To:</label>
-      <input type="text" class="form-control" placeholder="">
-    </div>
-    <div class="container">
-      <label class="form-label">Due Date</label>
-      <input type="text" class="form-control"  placeholder="">
-    </div>
-    
-    <div class="container">
-      <label class="form-label">Add Task</label>
-      <input type="text" class="form-control"  placeholder="">
-    </div>
-  
 
-  <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-  
-  <!-- personal script -->
-  <script src="./assets/js/script.js"></script>
-  <div class="card">
-    <div class="card-header">
-      Add New Task
-    </div>
-    <input type="text" class="form-control"  placeholder="">
+    <h1 class="m-5">Task List</h1>
+
+    <form class="container">
+      <div class="mb-3">
+        <label for="textEmail" class="form-label">Task Name:</label>
+        <input type="text" class="form-control" id="textEmail">
+      </div>
+      <div class="mb-3">
+        <label for="textDescription" class="form-label">Task Description:</label>
+        <input type="text" class="form-control" id="textDescription">
+      </div>
+      <div class="mb-3">
+        <label for="textAssign" class="form-label">Assigned To:</label>
+        <input type="text" class="form-control" id="textAssign">
+      </div>
+      <div class="mb-3">
+        <label for="dueDate" class="form-label">Due Date:</label>
+        <input type="date" class="form-control" id="dueDate">
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    
+    
+<!--   
+  <div class="card mt-5">
     <div class="card-body">
       <h5 class="card-title">Tasks</h5>
       <p class="card-text">Task Name</p>
       <p class="card-text">Task Description</p>
       <p class="card-text">Assigned To</p>
       <p class="card-text">Due Date</p>
-      <p class="card-text">Status</p>
       <a href="#" class="btn btn-primary">Status</a>
     </div>
-  </div>
+  </div> -->
+
+  
+
+  <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <!-- personal script -->
+    <script src="./assets/js/script.js"></script>
+    
 </body>
 </html>
