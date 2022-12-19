@@ -16,8 +16,8 @@
     <div class="container">
       <form class="form" id="new-task-form">
         <div class="mb-3">
-          <label for="textEmail" class="form-label">Task Name:</label>
-          <input type="text" class="form-control" id="textEmail">
+          <label for="textName" class="form-label">Task Name:</label>
+          <input type="text" class="form-control" id="textName">
         </div>
         <div class="mb-3">
           <label for="textDescription" class="form-label">Task Description:</label>
@@ -31,22 +31,21 @@
           <label for="dueDate" class="form-label">Due Date:</label>
           <input type="date" class="form-control" id="dueDate">
         </div>
-        <!-- <button type="submit" class="btn btn-primary" id="new-task-input">Submit</button> -->
-        <div class="mt-5">
+
+        <div class="d-grid mx-auto my-3">
           <input
-            class="btn btn-primary btn-lg btn-block"
+            class="btn btn-secondary btn-lg btn-block mt-5"
             type="submit"
             id="new-task-submit"
             value="Add Task"/>
-
         </div>
       </form>
     </div>
 
-  <div class="task-list" id="taskList">
+  <!-- <div class="task-list" id="taskList"> -->
     <h1>Submitted Tasks will go here</h1>
     <div class="tasks" id="tasks"></div>
-  </div>
+  <!-- </div> -->
 
 
   <!-- JavaScript Bundle with Popper -->
