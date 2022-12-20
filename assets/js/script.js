@@ -9,10 +9,10 @@ window.addEventListener('load', () => {
   form.addEventListener('submit', (e) => {
       e.preventDefault(); // prevents refreshing the page
 
-      const taskName = textName.value;
-      const taskDescription = textDescription.value;
-      const taskAssign = textAssign.value;
-      const taskDueDate = dueDate.value;
+      let taskName = textName.value;
+      let taskDescription = textDescription.value;
+      let taskAssign = textAssign.value;
+      let taskDueDate = dueDate.value;
     
       if (!taskName || !taskDescription || !taskAssign || !taskDueDate) {
           alert('fill out tasks');
@@ -32,5 +32,6 @@ window.addEventListener('load', () => {
           list_el.appendChild(task_content_el);
       }
       
+       
   });
 });
