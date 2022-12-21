@@ -6,9 +6,7 @@ h1 {
   border: 1px;
   margin: 10px;
   padding: 10px;
-  border-style: solid;
-}
-
+  border-style: solid;}
 body {
   font-weight: bold;
   min-height: 100vh;
@@ -27,5 +25,4 @@ h1 {
   line-height: 2.5;
 
 }
-
 
