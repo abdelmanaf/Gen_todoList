@@ -1,3 +1,14 @@
+
+h1 {
+  text-align: center;
+}
+.col {
+  border: 1px;
+  margin: 10px;
+  padding: 10px;
+  border-style: solid;
+}
+
 body {
   font-weight: bold;
   min-height: 100vh;
@@ -14,5 +25,7 @@ h1 {
   justify-content: center;
   margin: 20px;
   line-height: 2.5;
+
 }
+
 
