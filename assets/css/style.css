@@ -1,4 +1,5 @@
 
+
 body {
   font-weight: bold;
   min-height: 100vh;
@@ -6,10 +7,12 @@ body {
   font-family: 'Dela Gothic One', cursive;
 }
 
+
 h1 {
   text-align: center;
   color: rgb(96, 71, 120);
 }
+
 
 .tasks {
   display: flex;
