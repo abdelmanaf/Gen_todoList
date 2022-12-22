@@ -1,29 +1,22 @@
-<<<<<<< HEAD
-h1 {
-  text-align: center;
-}
-.col {
-  border: 1px;
-  margin: 10px;
-  padding: 10px;
-  border-style: solid;
-  
-=======
+
+
 body {
   font-weight: bold;
   min-height: 100vh;
   background-image: linear-gradient(to right, rgb(232, 93, 93), rgb(215, 215, 59));
   font-family: 'Dela Gothic One', cursive;
 }
+
+
 h1 {
   text-align: center;
   color: rgb(96, 71, 120);
 }
+
 
 .tasks {
   display: flex;
   justify-content: center;
   margin: 20px;
   line-height: 2.5;
->>>>>>> 3c2e4ddac5896f650f3ad796aea7dd5000579a9c
 }
