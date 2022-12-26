@@ -6,6 +6,7 @@ window.addEventListener('load', () => {
   const textAssign = document.querySelector('#textAssign')
   const dueDate = document.querySelector('#dueDate')
   const status = document.getElementById("status")
+  const errorEl = document.getElementById("error")
   
   form.addEventListener('submit', (e) => {
       e.preventDefault(); // prevents refreshing the page
@@ -16,8 +17,11 @@ window.addEventListener('load', () => {
       let taskDueDate = dueDate.value;
     
       if (!taskName || !taskDescription || !taskAssign || !taskDueDate) {
-          alert('fill out tasks');
-          return;
+          let error = document.createElement('div')
+          error.innerHTML = 
+            `<div class="mt-4 alert alert-danger">! Please all fields must be filled out  !!</div>
+            `
+          errorEl.appendChild(error)
       } else {
         const task_content_el = document.createElement("div");
   

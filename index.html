@@ -27,7 +27,7 @@
         </div>
         <div class="mb-3">
           <label for="textDescription" class="form-label">Task Description:</label>
-          <input type="text" class="form-control" id="textDescription">
+          <textarea class="form-control" id="textDescription" name="textDescription" rows="4" cols="50" placeholder="description..."></textarea>
         </div>
         <div class="mb-3">
           <label for="textAssign" class="form-label">Assigned To:</label>
@@ -47,7 +47,9 @@
             </select>
           </div>
         </div>
-      </div>
+
+        <div id="error"></div>
+      
 
         <div class="d-grid mx-auto">
           <input
