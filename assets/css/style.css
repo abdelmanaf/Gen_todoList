@@ -3,7 +3,7 @@
 body {
   font-weight: bold;
   min-height: 100vh;
-  background-image: linear-gradient(to right, rgb(232, 93, 93), rgb(215, 215, 59));
+  background-image: linear-gradient(rgb(232, 93, 93), rgb(215, 215, 59));
   font-family: 'Dela Gothic One', cursive;
 }
 
