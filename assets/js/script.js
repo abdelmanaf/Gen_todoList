@@ -29,9 +29,6 @@ window.addEventListener('load', () => {
           errorEl.appendChild(error)
       } else {
         const task_content_el = document.createElement("div");
-  
-
-          task_content_el.classList.add('content');
 
           task_content_el.innerHTML = 
           `<div>
@@ -43,15 +40,6 @@ window.addEventListener('load', () => {
           task_content_el.classList.add('tasks');
           list_el.appendChild(task_content_el);
       }
-
-
-      function validateForm(){
-        if (status.value === ""){
-          alert('Please enter task description');
-        }
-      }
-
-
       
        
   });

@@ -14,9 +14,11 @@ h1 {
 }
 
 
-.tasks {
+#task-list .tasks {
   display: flex;
   justify-content: center;
-  margin: 20px;
+  margin: 20px 0;
+  padding: 10px;
   line-height: 2.5;
+  border: 3px solid red;
 }
