@@ -23,7 +23,7 @@
       <form class="form" id="new-task-form">
         <div class="mb-3">
           <label for="textName" class="form-label">Task Name:</label>
-          <input type="text" class="form-control" id="textName">
+          <input type="text" class="form-control" id="textName" name="textName">
         </div>
         <div class="mb-3">
           <label for="textDescription" class="form-label">Task Description:</label>
@@ -31,13 +31,13 @@
         </div>
         <div class="mb-3">
           <label for="textAssign" class="form-label">Assigned To:</label>
-          <input type="text" class="form-control" id="textAssign">
+          <input type="text" class="form-control" id="textAssign" name="textAssign">
         </div>
         
         <div class="row">
           <div class="col-6">
             <label for="dueDate">Date:</label>
-            <input type="date" class="form-control" id="dueDate">
+            <input type="date" class="form-control" id="dueDate" name="dueDate">
           </div>
           <div class="col-6">
             <label for="status">Status:</label>
@@ -48,6 +48,7 @@
           </div>
         </div>
 
+        <!-- error container  -->
         <div id="error"></div>
       
 
@@ -60,6 +61,7 @@
         </div>
       </form>
       
+      <!-- added task container -->
       <div class="mt-5 task-list" id="task-list">
         <h1>Submitted Tasks will go here</h1>
         <div class="container" id="task"></div>

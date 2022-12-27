@@ -40,15 +40,6 @@ window.addEventListener('load', () => {
           task_content_el.classList.add('tasks');
           list_el.appendChild(task_content_el);
       }
-
-
-      function validateForm(){
-        if (status.value === ""){
-          alert('Please enter task description');
-        }
-      }
-
-
       
        
   });
