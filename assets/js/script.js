@@ -1,4 +1,4 @@
-window.addEventListener('load', () => {
+// Select elements 
   const form = document.querySelector('#new-task-form'); 
   const list_el = document.querySelector('#task');
   const textName = document.querySelector('#textName')
@@ -16,43 +16,68 @@ window.addEventListener('load', () => {
 
   const tasks = [];
   
-  const addTask = (textName, textDescription, textAssign, dueDate) => {
-
+  const addTask = (textName, textAssign, textDescription, dueDate) => {
+    tasks.push({
+      textName,
+      textAssign,
+      textDescription,
+      dueDate
+    })
+    return { textName, textAssign, textDescription, dueDate }
   }
 
-  
+  const createTaskElement = ({ textName, textAssign, textDescription, dueDate }) => {
+    const task_content_el = document.createElement("div");
+    const taskNameElement = document.createElement("h3");
+    const assignToElement = document.createElement("p");
+    const taskDescriptionElement = document.createElement("p");
+    const dueDateElement = document.createElement("p");
 
-  form.addEventListener('submit', (e) => {
-      e.preventDefault(); // prevents refreshing the page
+    taskNameElement.textContent = `Task Name: ${textName}`      
+    assignToElement.textContent = `Assign to: ${textAssign}`      
+    taskDescriptionElement.textContent = `Task description: ${textDescription}`      
+    dueDateElement.textContent = `Due date: ${dueDate}`
 
-      let taskName = textName.value;
-      let taskDescription = textDescription.value;
-      let taskAssign = textAssign.value;
-      let taskDueDate = dueDate.value;
-    
-      if (!taskName || !taskDescription || !taskAssign || !taskDueDate) {
-          let error = document.createElement('div')
-          error.innerHTML = 
-            `<div class="mt-4 alert alert-danger">! Please all fields must be filled out  !!</div>
-            `
-          errorEl.appendChild(error)
-      } else {
-        const task_content_el = document.createElement("div");
+    task_content_el.classList.add('tasks');
+    task_content_el.append(taskNameElement,assignToElement, taskDescriptionElement, dueDateElement)
+    list_el.appendChild(task_content_el);
+  }
 
-        const taskNameElement = document.createElement("h5");
-        const taskDescriptionElement = document.createElement("p");
-        const assignToElement = document.createElement("p");
-        const dueDateElement = document.createElement("p");
+  tasks.forEach(createTaskElement)
 
-        taskNameElement.textContent = `Task Name: ${taskName}`      
-        taskDescriptionElement.textContent = `Task description: ${taskDescription}`      
-        assignToElement.textContent = `Assign to: ${taskAssign}`      
-        dueDateElement.textContent = `Due date: ${taskDueDate}`
- 
-        task_content_el.classList.add('tasks');
-        task_content_el.append(taskNameElement, taskDescriptionElement, assignToElement, dueDateElement)
-        list_el.appendChild(task_content_el);
-      }
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault(); // prevents refreshing the page
+
+    let taskName = textName.value;
+    let taskAssign = textAssign.value;
+    let taskDescription = textDescription.value;
+    let taskDueDate = dueDate.value;
+
+    if (!taskName || !taskDescription || !taskAssign || !taskDueDate) {
+      let error = document.createElement('div')
+      error.innerHTML = 
+        `<div class="mt-4 alert alert-danger"> Please all fields must be filled out  !!</div>
+        `
+      errorEl.appendChild(error)
+
+    } else {
+
+      const newTask = addTask(
+        taskName,
+        taskAssign,
+        taskDescription,
+        taskDueDate
+      )
+      createTaskElement(newTask)
       submittedEl.classList.remove('submitted');
-  });
-});
+      
+      // reset all fiels 
+      textName.value = "";
+      textAssign.value = "";
+      textDescription.value = "";
+      dueDate.value = "";
+    }
+    
+  })
+  
