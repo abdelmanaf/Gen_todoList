@@ -34,18 +34,44 @@
   // create task 
   const createTaskElement = ({ textName, textAssign, textDescription, dueDate }) => {
     const task_content_el = document.createElement("div");
+
+    // container with h3 and span elements 
+    const h3SpanDiv = document.createElement("div");
+    h3SpanDiv.classList.add('d-flex', 'w-100', 'mt-2', 'justify-content-between', 'align-items-center')
+    const spanElement = document.createElement("span");
+    spanElement.classList.add('badge', 'bg-danger')
     const taskNameElement = document.createElement("h3");
+
+    // container with paragraphs 
+    const paragraphsContainer = document.createElement("div");
     const assignToElement = document.createElement("p");
     const taskDescriptionElement = document.createElement("p");
     const dueDateElement = document.createElement("p");
+
+    // container with buttons 
+    const buttonsContainer = document.createElement("div");
+    buttonsContainer.classList.add('d-flex', 'gap-3')
+    const deleteBtn = document.createElement("button")
+    deleteBtn.classList.add('btn', 'btn-danger', 'rounded-5');
+    const markBtn = document.createElement("button")
+    markBtn.classList.add('btn', 'btn-success', 'rounded-5');
+
 
     taskNameElement.textContent = `Task Name: ${textName}`      
     assignToElement.textContent = `Assign to: ${textAssign}`      
     taskDescriptionElement.textContent = `Task description: ${textDescription}`      
     dueDateElement.textContent = `Due date: ${dueDate}`
 
+    spanElement.textContent = 'TODO'
+    deleteBtn.textContent = 'Delete this task'
+    markBtn.textContent = 'mark as done'
+
     task_content_el.classList.add('tasks');
-    task_content_el.append(taskNameElement,assignToElement, taskDescriptionElement, dueDateElement)
+    h3SpanDiv.append(taskNameElement, spanElement)
+    paragraphsContainer.append(assignToElement, taskDescriptionElement, dueDateElement)
+    buttonsContainer.append(deleteBtn, markBtn)
+
+    task_content_el.append(h3SpanDiv ,paragraphsContainer, buttonsContainer)
     list_el.appendChild(task_content_el);
 
     submittedEl.style.display = tasks.length === 0 ? 'none' : 'block';
@@ -80,7 +106,7 @@
         )
         createTaskElement(newTask)
         
-        // submittedEl.classList.remove('submitted');
+       
       // reset all fiels 
       textName.value = "";
       textAssign.value = "";
