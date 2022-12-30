@@ -52,9 +52,9 @@
     const buttonsContainer = document.createElement("div");
     buttonsContainer.classList.add('d-flex', 'gap-3')
     const deleteBtn = document.createElement("button")
-    deleteBtn.classList.add('btn', 'btn-danger', 'rounded-5');
+    deleteBtn.classList.add('btn', 'btn-danger', 'rounded-5', 'deleteBtn');
     const markBtn = document.createElement("button")
-    markBtn.classList.add('btn', 'btn-success', 'rounded-5');
+    markBtn.classList.add('btn', 'btn-success', 'rounded-5', 'markBtn');
 
 
     taskNameElement.textContent = `Task Name: ${textName}`      
@@ -76,6 +76,13 @@
 
     submittedEl.style.display = tasks.length === 0 ? 'none' : 'block';
     
+    // delete task completely 
+    const closes = document.querySelectorAll('.deleteBtn')
+    closes.forEach(close => {
+      close.addEventListener('click', () => {
+      task_content_el.classList.add("delete")
+      })
+    })
   }
   submittedEl.style.display = tasks.length === 0 ? 'none' : 'block';
 
