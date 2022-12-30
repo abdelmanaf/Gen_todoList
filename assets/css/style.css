@@ -19,5 +19,7 @@ h1 {
 #task-list .tasks {
   margin: 20px 0;
   padding: 10px;
-  border: 3px solid red;
+  border: 3px solid rgb(193, 171, 171);
+  color: white;
+  background-color: rgb(126, 120, 120);
 }

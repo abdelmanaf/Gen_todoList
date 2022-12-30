@@ -70,7 +70,7 @@
         `
         errorEl.appendChild(error)
         
-      } else {
+    } else {
         
       const newTask = addTask(
         taskName,
