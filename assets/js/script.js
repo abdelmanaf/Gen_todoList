@@ -19,6 +19,7 @@
   // add task 
   const addTask = (textName, textAssign, textDescription, dueDate) => {
     tasks.push({
+      taskId: Math.floor(Math.random() * 100), // will generate a unique id for each task
       textName,
       textAssign,
       textDescription,
@@ -32,7 +33,7 @@
   }
 
   // create task 
-  const createTaskElement = ({ textName, textAssign, textDescription, dueDate }) => {
+  const createTaskElement = ({ taskId, textName, textAssign, textDescription, dueDate }) => {
     const task_content_el = document.createElement("div");
 
     // container with h3 and span elements 
@@ -56,11 +57,14 @@
     const markBtn = document.createElement("button")
     markBtn.classList.add('btn', 'btn-success', 'rounded-5', 'markBtn');
 
+    const date = new Date(dueDate);
+      // human-readable code of the dueDate property
+    const formattedDate = `${date.getMonth() + 1} / ${date.getDate()} / ${date.getFullYear()}`;
 
     taskNameElement.textContent = `Task Name: ${textName}`      
     assignToElement.textContent = `Assign to: ${textAssign}`      
     taskDescriptionElement.textContent = `Task description: ${textDescription}`      
-    dueDateElement.textContent = `Due date: ${dueDate}`
+    dueDateElement.textContent = `Due date: ${formattedDate}`
 
     spanElement.textContent = 'TODO'
     deleteBtn.textContent = 'Delete this task'
@@ -78,9 +82,17 @@
     
     // delete task completely 
     const closes = document.querySelectorAll('.deleteBtn')
+
+    // for (let i = 0; i< tasks.length; i++) {
+    //   let task = tasks[i];
+      
+    //   if (task.id !== taskId) {
+    //       tasks.push(task);
+    //   }
+    // }
     closes.forEach(close => {
       close.addEventListener('click', () => {
-      task_content_el.classList.add("delete")
+        // document.getElementById(taskId).remove();
       })
     })
   }
@@ -122,4 +134,3 @@
     }
     
   })
-  
