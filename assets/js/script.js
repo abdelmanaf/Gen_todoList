@@ -19,6 +19,7 @@
   // add task 
   const addTask = (textName, textAssign, textDescription, dueDate) => {
     tasks.push({
+      taskId: Math.floor(Math.random() * 100), // will generate a unique id for each task
       textName,
       textAssign,
       textDescription,
@@ -32,14 +33,14 @@
   }
 
   // create task 
-  const createTaskElement = ({ textName, textAssign, textDescription, dueDate }) => {
+  const createTaskElement = ({ taskId, textName, textAssign, textDescription, dueDate }) => {
     const task_content_el = document.createElement("div");
 
     // container with h3 and span elements 
     const h3SpanDiv = document.createElement("div");
     h3SpanDiv.classList.add('d-flex', 'w-100', 'mt-2', 'justify-content-between', 'align-items-center')
     const spanElement = document.createElement("span");
-    spanElement.classList.add('badge', 'bg-danger')
+    spanElement.classList.add('mySpan', 'badge', 'bg-danger')
     const taskNameElement = document.createElement("h3");
 
     // container with paragraphs 
@@ -56,11 +57,14 @@
     const markBtn = document.createElement("button")
     markBtn.classList.add('btn', 'btn-success', 'rounded-5', 'markBtn');
 
+    const date = new Date(dueDate);
+      // human-readable code of the dueDate property
+    const formattedDate = `${date.getMonth() + 1} / ${date.getDate()} / ${date.getFullYear()}`;
 
     taskNameElement.textContent = `Task Name: ${textName}`      
     assignToElement.textContent = `Assign to: ${textAssign}`      
     taskDescriptionElement.textContent = `Task description: ${textDescription}`      
-    dueDateElement.textContent = `Due date: ${dueDate}`
+    dueDateElement.textContent = `Due date: ${formattedDate}`
 
     spanElement.textContent = 'TODO'
     deleteBtn.textContent = 'Delete this task'
@@ -76,13 +80,36 @@
 
     submittedEl.style.display = tasks.length === 0 ? 'none' : 'block';
     
+
     // delete task completely 
     const closes = document.querySelectorAll('.deleteBtn')
+
+    // for (let i = 0; i< tasks.length; i++) {
+    //   let task = tasks[i];
+      
+    //   if (task.id !== taskId) {
+    //       tasks.push(task);
+    //   }
+    // }
     closes.forEach(close => {
       close.addEventListener('click', () => {
-      task_content_el.classList.add("delete")
+        // document.getElementById(taskId).remove();
       })
     })
+
+
+    // mark as done 
+    const markButtons = document.querySelectorAll('.markBtn')
+      markButtons.forEach( markButton => {
+      markButton.addEventListener('click', () => {
+        mySpan = document.querySelector('.mySpan')
+        mySpan.classList.remove('bg-danger')
+        mySpan.classList.add('bg-success')
+
+      })
+    })
+
+
   }
   submittedEl.style.display = tasks.length === 0 ? 'none' : 'block';
 
@@ -122,4 +149,3 @@
     }
     
   })
-  
