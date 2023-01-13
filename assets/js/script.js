@@ -40,7 +40,7 @@
     const h3SpanDiv = document.createElement("div");
     h3SpanDiv.classList.add('d-flex', 'w-100', 'mt-2', 'justify-content-between', 'align-items-center')
     const spanElement = document.createElement("span");
-    spanElement.classList.add('badge', 'bg-danger')
+    spanElement.classList.add('mySpan', 'badge', 'bg-danger')
     const taskNameElement = document.createElement("h3");
 
     // container with paragraphs 
@@ -80,6 +80,7 @@
 
     submittedEl.style.display = tasks.length === 0 ? 'none' : 'block';
     
+
     // delete task completely 
     const closes = document.querySelectorAll('.deleteBtn')
 
@@ -95,6 +96,20 @@
         // document.getElementById(taskId).remove();
       })
     })
+
+
+    // mark as done 
+    const markButtons = document.querySelectorAll('.markBtn')
+      markButtons.forEach( markButton => {
+      markButton.addEventListener('click', () => {
+        mySpan = document.querySelector('.mySpan')
+        mySpan.classList.remove('bg-danger')
+        mySpan.classList.add('bg-success')
+
+      })
+    })
+
+
   }
   submittedEl.style.display = tasks.length === 0 ? 'none' : 'block';
 
