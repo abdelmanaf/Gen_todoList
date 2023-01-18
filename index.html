@@ -41,9 +41,9 @@
           </div>
           <div class="col-6">
             <label for="status">Status:</label>
-            <select class="form-control" id="status">
-              <option>To-do</option>
-              <option>Done</option>
+            <select class="form-control" id="statusControl">
+              <option  value="todo">To-do</option>
+              <option value="done">Done</option>
             </select>
           </div>
         </div>
@@ -65,7 +65,7 @@
       <div class="mt-4 task-list" id="task-list">
         <h1 class="submitted">Submitted Tasks</h1>
         <div class="container" id="task">
-          <!-- <div class="tasks">
+          <!-- <div class="tasks" data-task-id='id'>
 
             <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
               <h3>Task name: </h3>
@@ -77,8 +77,8 @@
               <p>Due date</p>
             </div>
             <div class="d-flex gap-3">
-              <button class="btn btn-danger rounded-5">delete this task</button>
-              <button class="btn btn-success rounded-5">mark as done</button>
+              <button class="deleteBtn btn btn-danger rounded-5">delete this task</button>
+              <button class="markBtn  btn btn-success rounded-5">mark as done</button>
             </div>
 
           </div> -->
