@@ -9,7 +9,6 @@ body {
   background-size: cover;
 }
 
-
 h1 {
   text-align: center;
   color: #FFFBEB;
@@ -22,9 +21,11 @@ h1 {
 .form-label {
   color:#FFFBEB
 }
+
 label {
   color: #FFFBEB;
 }
+
 #task-list .tasks {
   margin: 20px 0;
   padding: 10px;
