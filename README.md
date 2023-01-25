@@ -8,7 +8,7 @@ This application we created will help you organize your daily task. Not only wil
 <!-- Deployment link  -->
 <h2 style="text-align: center; text-decoration: underline">Deployment link:</h2>
 
-***<p style="text-align: center;">[LIVE APP](https://abdelmanaf.github.io/Gen_todoList/)</p>***
+***<p style="text-align: center;">[LIVE APP](https://incandescent-macaron-a5ca25.netlify.app/)</p>***
 <br >
 
 <!-- Images  -->
